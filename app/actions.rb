@@ -26,6 +26,11 @@ post '/messages' do
 end
 
 get '/messages/:id' do
+	@other = []
   @message = Message.find params[:id]
+  author1 = @message.author
+	Message.where(author: author1).each do |record|
+		@other << record.content
+	end
   erb :'messages/show'
 end
