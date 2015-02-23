@@ -14,5 +14,15 @@
   Message created at: <%= @message.created_at  %>
 </p>
 
+<p>
+	Other messages by this author:
+</p>
+
+
+<% @other.each do |elem| %>
+	<p><%= elem %></p>
+<% end %>
+
+
 <hr/>
 <a href="/messages">Back to All Messages</a>
